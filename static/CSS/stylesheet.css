@@ -1,0 +1,25 @@
+.parallax { 
+    /* The image used */
+    background-image: url("../images/belly_button.jpg");
+    
+    /* Set a specific height */
+    height: 50% !important; 
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    padding: 200px 0px 10px 0px;
+    font-size: 50pt;
+    color: azure;
+}
+
+h2 {
+    padding: 0px 0px 200px 0px;
+    font-size: 20pt;
+    color: rgb(77,77, 77);
+}
