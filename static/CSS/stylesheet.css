@@ -13,13 +13,13 @@
 }
 
 h1 {
-    padding: 200px 0px 10px 0px;
+    padding: 200px 0px 100px 0px;
     font-size: 50pt;
     color: azure;
 }
 
 h2 {
-    padding: 0px 0px 200px 0px;
+    /* padding: 0px 0px 200px 0px; */
     font-size: 20pt;
     color: rgb(77,77, 77);
 }
