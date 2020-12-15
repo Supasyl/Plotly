@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- D3 -->
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <!-- Bootstrap & CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' href='static/CSS/stylesheet.css'>
     <!-- Plot.ly -->
@@ -26,24 +26,36 @@
         </div>
 
         <div class='row'>
-            <div class='col-12'>
-                <h2>Introduction</h2></div>
-                <p>Use the interactive charts below to explore the different microbes in peoples belly buttons. Each identity is an anonymous person's result. All information is updated to the identity you choose.</p>
+            <div class='col-12 text-center'>
+                <h2>Introduction</h2>
+                <p>Use the interactive charts below to explore the different microbes in peoples belly button. The microbial species are closely related, which is called operational taxonomic units, eg OTUs. Each number represents an anonymous person's identity. The table and plots are updated to show you the information for the identity you choose.</p>
             </div>
+        </div>
+        <div class='row'>
             <div class='col-4'>
                 <form id='searchForm'>
-                    <h3 class='text-center'>Filter the charts</h3>
+                    <h3>Filter the charts</h3>
                     <div class='form-group'>
                         <label for='subjectID'>Choose a test subject ID no.</label>
                             <select class='form-control' id='subjectID'>
                             </select>
                     </div>
                 </form>
+                <div class='card'>
+                    <div class='card-header'>Demographic Info</div>
+                    <div class='card-body'>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class='col-4'> 
+                <div id="barChart"></div>
+                <script src="plots.js"></script>
             </div>
         </div>
     
     </div>
-    <script src="./static/data/samples.json"></script>
+    <!-- <script src="./static/data/samples.json"></script> -->
     <script src="./static/js/plots.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
