@@ -29,6 +29,9 @@ h3 {
     color: rgb(77,77, 77);
 }
 
+#barChart {
+    margin: 00px 0px 0px 60px;
+}
 #subjectID {
     background-color: peru;
 }
@@ -37,8 +40,3 @@ h3 {
     font-size: 18px;
     text-align: center;
 }
-
-/* Plotly */
-/* .modebar{
-    display: none !important;
-} */

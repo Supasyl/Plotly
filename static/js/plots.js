@@ -20,13 +20,13 @@ d3.json("static/data/samples.json").then((data) => {
   
     // build card
     Object.entries(metadata[0]).forEach(([key, value]) => {
-        if (key == 'id') {document.getElementById('p1').innerHTML = 'id: ' + value};
-        if (key == 'ethnicity') {document.getElementById('p2').innerHTML = 'ethnicity: ' + value};
-        if (key == 'gender') {document.getElementById('p3').innerHTML = 'gender: ' + value};
-        if (key == 'age') {document.getElementById('p4').innerHTML = 'age: ' + value};
-        if (key == 'location') {document.getElementById('p5').innerHTML = 'location: ' + value};
-        if (key == 'bbtype') {document.getElementById('p6').innerHTML = 'bbtype: ' + value};
-        if (key == 'wfreq') {document.getElementById('p7').innerHTML = 'wfreq: ' + value};
+        if (key == 'id') {document.getElementById('p1').innerHTML = 'ID: ' + value};
+        if (key == 'ethnicity') {document.getElementById('p2').innerHTML = 'Ethnicity: ' + value};
+        if (key == 'gender') {document.getElementById('p3').innerHTML = 'Gender: ' + value};
+        if (key == 'age') {document.getElementById('p4').innerHTML = 'Age: ' + value};
+        if (key == 'location') {document.getElementById('p5').innerHTML = 'Location: ' + value};
+        if (key == 'bbtype') {document.getElementById('p6').innerHTML = 'Belly Button type: ' + value};
+        if (key == 'wfreq') {document.getElementById('p7').innerHTML = 'Washing frequency p/w: ' + value};
     });
         
     // variables for charts
@@ -37,22 +37,21 @@ d3.json("static/data/samples.json").then((data) => {
     let IDotu_ids = ID1.otu_ids;
     let IDsample_value = ID1.sample_values; 
     let IDotu_labels = ID1.otu_labels;
-    
+
     // build bar chart
     let trace = {
         x: IDsample_value.slice(0, 10),
-        y: `OTU ID: ${IDotu_ids.slice(0, 10).toString()}`,
+        y: IDotu_ids.slice(0, 10).map((id) => `OTU ID:${id}`),
         text: IDotu_labels.slice(0, 10),
         type: 'bar',
         orientation: 'h',
+        connectgaps: 'true',
         marker: {color: 'burlywood'},        
     };
     let layout = {
         title: 'Top 10 OTUs',
+        connecthaps: 'true',
         xaxis: {'title': 'OTU value'},
-        yaxis: {'tickmode': 'array',
-                'tickvals': ID1.sample_values,
-                'ticktext': `OTU ID: ${IDotu_ids}`}
     };
     Plotly.newPlot('barChart', [trace], layout);
     
@@ -79,10 +78,6 @@ d3.json("static/data/samples.json").then((data) => {
         title: 'Scrubs per week',
         type: 'indicator',
         mode: 'gauge+number',
-        text: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-        textinfo: 'text',
-        textposition: 'inside',
-        hoverinfo: 'text',
         gauge: {
             axis: {range: [0, 9]},
             bar: {color: 'darkblue'},
@@ -116,13 +111,13 @@ d3.json("static/data/samples.json").then((data) => {
     metadataID = metadataID[0];
     
     // build card
-    document.getElementById('p1').innerHTML = `id: ${metadataID.id}`;
-    document.getElementById('p2').innerHTML = `ethnicity: ${metadataID.ethnicity}`;
-    document.getElementById('p3').innerHTML = `gender: ${metadataID.gender}`;
-    document.getElementById('p4').innerHTML = `age: ${metadataID.age}`;
-    document.getElementById('p5').innerHTML = `location: ${metadataID.location}`;
-    document.getElementById('p6').innerHTML = `bbtype: ${metadataID.bbtype}`;
-    document.getElementById('p7').innerHTML = `washing frequency p/w: ${metadataID.wfreq}`;
+    document.getElementById('p1').innerHTML = `ID: ${metadataID.id}`;
+    document.getElementById('p2').innerHTML = `Ethnicity: ${metadataID.ethnicity}`;
+    document.getElementById('p3').innerHTML = `Gender: ${metadataID.gender}`;
+    document.getElementById('p4').innerHTML = `Age: ${metadataID.age}`;
+    document.getElementById('p5').innerHTML = `Location: ${metadataID.location}`;
+    document.getElementById('p6').innerHTML = `Belly Button type: ${metadataID.bbtype}`;
+    document.getElementById('p7').innerHTML = `Washing frequency p/w: ${metadataID.wfreq}`;
         
     // variables for charts
     let samples = data.samples;
@@ -143,7 +138,7 @@ d3.json("static/data/samples.json").then((data) => {
     // if sample size is under 10 items:
     if (y.length <= 10) {
         Plotly.restyle("barChart", "x", [x]);
-        Plotly.restyle("barChart", "y", [`OTU ID: ${y.toString()}`]);
+        Plotly.restyle("barChart", "y", [y.map((id) => `OTU ID: ${id}`)]);
         Plotly.restyle("barChart", "text", [text]);
     };
 
@@ -152,12 +147,9 @@ d3.json("static/data/samples.json").then((data) => {
         xSlice = x.slice(0, 10);
         ySlice = y.slice(0, 10);
         textSlice = text.slice(0, 10);
-        console.log(ySlice);
-        console.log(xSlice);
-        console.log(textSlice);
 
         Plotly.restyle("barChart", "x", [xSlice]);
-        Plotly.restyle("barChart", "y", [`OTU ID: ${ySlice.toString()}`]);
+        Plotly.restyle("barChart", "y", [ySlice.map((id) => `OTU ID: ${id}`)]);
         Plotly.restyle("barChart", "text", [textSlice]);
         Plotly.restyle("barChart", "yaxis.tickvals", [ySlice]);
         Plotly.restyle("barChart", "yaxis.ticktext", [`OTU ID: ${textSlice}`]);
