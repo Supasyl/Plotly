@@ -1,6 +1,6 @@
 .parallax { 
     /* The image used */
-    background-image: url("../images/belly_button.jpg");
+    background-image: url("../images/microbes.jpg");
     
     /* Set a specific height */
     height: 50% !important; 
@@ -15,16 +15,30 @@
 h1 {
     padding: 150px 0px 100px 0px;
     font-size: 50pt;
-    color: azure;
+    color: rgb(77, 77, 77);
 }
 
 h2 {
-    /* padding: 0px 0px 200px 0px; */
-    font-size: 20pt;
+    padding: 20px 0px 0px 0px;
+    font-size: 30pt;
     color: rgb(77,77, 77);
 }
 
-/* Plotly */
-.modebar{
-    display: none !important;
+h3 {
+    padding: 10px 0px 0px 0px;
+    color: rgb(77,77, 77);
 }
+
+#subjectID {
+    background-color: peru;
+}
+/* demographic card */
+.card-header {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Plotly */
+/* .modebar{
+    display: none !important;
+} */

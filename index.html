@@ -26,13 +26,13 @@
         </div>
 
         <div class='row'>
-            <div class='col-12 text-center'>
+            <div class='col-12'>
                 <h2>Introduction</h2>
-                <p>Use the interactive charts below to explore the different microbes in peoples belly button. The microbial species are closely related, which is called operational taxonomic units, eg OTUs. Each number represents an anonymous person's identity. The table and plots are updated to show you the information for the identity you choose.</p>
+                <p>Use the interactive charts below to explore the different microbes in peoples belly button. The microbial species are closely related, which is called operational taxonomic units, eg OTUs. Each number represents an anonymous person's identity. The table and plots are updated to show you the information for the identity you choose. As the carts are interactive, you can zoom, see additional data when you hover over the charts, and more. Enjoy!</p>
             </div>
         </div>
         <div class='row'>
-            <div class='col-4'>
+            <div class='col-3'>
                 <form id='searchForm'>
                     <h3>Filter the charts</h3>
                     <div class='form-group'>
@@ -44,16 +44,29 @@
                 <div class='card'>
                     <div class='card-header'>Demographic Info</div>
                     <div class='card-body'>
-                        <p></p>
+                        <p id='p1'></p>
+                        <p id='p2'></p>
+                        <p id='p3'></p>
+                        <p id='p4'></p>
+                        <p id='p5'></p>
+                        <p id='p6'></p>
+                        <p id='p7'></p>
                     </div>
                 </div>
             </div>
             <div class='col-4'> 
                 <div id="barChart"></div>
-                <script src="plots.js"></script>
+                <!-- <script src="plots.js"></script> -->
+            </div>
+            <div class='col-5'>
+                <div id='gaugeChart'></div>
             </div>
         </div>
-    
+        <div class='row'>
+            <div class='col-12'>
+                <div id='bubbleChart'></div>
+            </div>
+        </div>
     </div>
     <!-- <script src="./static/data/samples.json"></script> -->
     <script src="./static/js/plots.js"></script>
